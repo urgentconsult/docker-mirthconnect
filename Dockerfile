@@ -1,6 +1,8 @@
 FROM dockerfile/java:oracle-java7
 
-RUN apt-get update && apt-get -y install nginx --no-install-recommends
+RUN apt-get update \
+ && apt-get -y install nginx --no-install-recommends \
+ && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/local/mirthconnect
 
