@@ -1,4 +1,4 @@
-FROM dockerfile/java:oracle-java7
+FROM java/oracle-java7
 
 RUN apt-get update && apt-get -y install nginx --no-install-recommends
 
