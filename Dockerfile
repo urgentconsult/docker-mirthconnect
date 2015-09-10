@@ -1,6 +1,6 @@
-FROM java:7
+FROM airdock/oracle-jdk:1.8
 
-RUN apt-get update && apt-get -y install nginx netcat --no-install-recommends
+RUN apt-get update && apt-get -y install nginx netcat unzip --no-install-recommends
 
 WORKDIR /usr/local/mirthconnect
 
@@ -22,7 +22,7 @@ RUN cd custom-lib \
  && ls -alh \
  && unzip httpcomponents-client-4.5-bin.zip \
  && rm httpcomponents-client-4.5-bin.zip \
- && cd .. 
+ && cd ..
 
 ADD templates/etc /etc
 ADD templates/mirthconnect /usr/local/mirthconnect
